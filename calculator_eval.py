@@ -1,21 +1,10 @@
-def calculate(operand1, operator, operand2):
-    if operator == '+':
-        return operand1 + operand2
-    elif operator == '-':
-        return operand1 - operand2
-    elif operator == '*':
-        return operand1 * operand2
-    elif operator == '%':
-        return operand1 % operand2
-    elif operator == '/':
-        try:
-            return operand1 / operand2
-        except Exception as e:
-            print(e)
-    else:
-        return "Error: Invalid operator"
+def calculate(exp):
+    try:
+        var = eval(exp)
+        return var
+    except Exception as e:
+        return e
 
-
-expression = input("Enter an expression: ")
-var = eval(expression)
-print(var)
+expression = input("Enter the expression:")
+result = calculate(expression)
+print("Result is:", result)
